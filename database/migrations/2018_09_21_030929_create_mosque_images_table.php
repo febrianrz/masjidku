@@ -13,15 +13,14 @@ class CreateMosqueImagesTable extends Migration
      */
     public function up()
     {
-        // Schema::create('mosque_images', function (Blueprint $table) {
-        //     $table->increments('id');
-        //     $table->string('file');
-        //     $table->integer('id_mosque')->unsigned()->comment('ID masjid dari table mosquees');
-        
-        //     $table->timestamps();
-        //     $table->foreign('id_mosque')->references('id')->on('mosquees');
+        Schema::create('mosque_images', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('file');
+            $table->integer('id_mosque')->unsigned()->comment('ID masjid dari table mosquees');
+            $table->timestamps();
 
-        // });
+            $table->foreign('id_mosque')->references('id')->on('mosquees');
+        });
     }
 
     /**
